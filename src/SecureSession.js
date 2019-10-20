@@ -12,3 +12,18 @@ async function init()
     serverPublicKey = keypair.publicKey;
 }
 
+async function serverPublicKey()
+{
+    await init();
+    return serverPublicKey;
+}
+module.exports.serverPublicKey = serverPublicKey;
+
+function setClientPublicKey(publickey)
+{
+    if(publickey != null && (typeof(clientPublicKey) == 'undefined') || clientPublicKey == null || clientPublicKey == publickey)
+    {
+        clientPublicKey = publickey;
+    } else
+    throw "client public key already set";
+}
