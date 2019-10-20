@@ -27,3 +27,5 @@ function setClientPublicKey(publickey)
     } else
     throw "client public key already set";
 }
+module.exports.setClientPublicKey = setClientPublicKey;
+
